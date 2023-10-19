@@ -4,6 +4,7 @@
     --bp-yellow: #F9D859;
     --bp-orange: #E5930E;
     --bp-red: #8B290D;
+    --bp-brown: #5E2511;
     --bp-black: #302014;
 }
 
@@ -11,17 +12,35 @@ html {
     background: var(--bp-white);
     color:var(--bp-black);
     font-family:'Onest', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.1em;
 }
 
 h1 {
     font-weight: 500;
-    font-size: 3em;
-    color: var(--bp-red);
+    font-size: 3.2em;
+    color: var(--bp-black);
+}
+
+h2 {
+    font-weight: 300;
+    font-size:2.2em;
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 1.4em;
 }
 
 p {
-    line-height: 1.6em;
+    line-height: 1.8em;
 }
+
+.lead {
+    line-height: 2em;
+    font-size:1.2em;
+}
+.text-center{text-align: center;}
+.text-right {text-align: right;}
 
 a.inline-link {
     text-decoration: none;
@@ -40,27 +59,42 @@ a.inline-link:active {
     border-bottom:1px solid var(--bp-red);
 }
 
-.logo {
-    font-weight: 700;
-    letter-spacing:-0.05em;
-    padding:0.5em 0;
-    font-size:1.2em;
-}
-.nav {
-    background: var(--bp-yellow)
-}
-
-.hero {
-    background: var(--bp-yellow);
-    padding-bottom:2em;
-}
-
-.contact {
-    text-align: right;
-}
-
 .content {
     padding:1em 2em;
     max-width:64em;
     margin:0 auto;
 }
+
+.logo {
+    font-weight: 700;
+    letter-spacing:-0.05em;
+}
+
+.nav {
+    background: var(--bp-yellow)
+}
+
+.hero .logo {
+    padding-top:1em;
+    padding-bottom:0.2em;
+    font-size:6em;
+}
+
+.hero {
+    padding-bottom:2em;
+    background: var(--bp-yellow);
+    background: linear-gradient(0deg, rgba(254,226,119,1) 0%, var(--bp-yellow) 100%);
+}
+
+.services{
+    padding-top:2em;
+}
+
+.contact {
+    padding: 4em 0 2em;
+    background-image: url("../img/bg-yellow.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.contact  .logo {font-size: 1.8em;}
