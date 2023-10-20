@@ -115,7 +115,8 @@ a.inline-link:active {
 }
 
 .header .logo {
-    padding:0.5em 0;
+    position:relative;
+    top:-0.5em;
 }
 
 .hero {
@@ -155,6 +156,7 @@ a.inline-link:active {
 }
 
 .footer  .logo {
-    padding-top:3em;
+    padding-top:2em;
+    padding-bottom:0.5em;
     font-size: 1.8em;
 }
