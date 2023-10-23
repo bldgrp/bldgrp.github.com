@@ -1,10 +1,8 @@
 :root {
     --bp-white: #fffbf1;
     --bp-light-yellow: #FEE6A4;
-    --bp-yellow: #F9D859;
-    --bp-orange: #E5930E;
-    --bp-red: #8B290D;
-    --bp-brown: #5E2511;
+    --bp-yellow: #ffd942;
+    --bp-orange: #ed8607;
     --bp-black: #302014;
 }
 
@@ -31,6 +29,12 @@ h3 {
     font-size: 1.5em;
 }
 
+h4 {
+    font-weight: 600;
+    font-size:1em;
+    margin:0.5em 0;
+}
+
 p {
     line-height: 1.8em;
 }
@@ -48,26 +52,33 @@ p {
 .text-right {text-align: right;}
 
 .button-primary {
-    background-color: var(--bp-red);
+    background: var(--bp-orange);
     color:var(--bp-white);
+    border:1px solid var(--bp-orange);
+}
+
+.button-primary:hover {
+    background:var(--bp-white);
+    color:var(--bp-orange);
+    border:1px solid var(--bp-orange);
 }
 
 a.inline-link {
     text-decoration: none;
-    border-bottom:1px solid var(--bp-red);
-    color: var(--bp-red);
-    font-weight: 600;
+    border-bottom:1px solid var(--bp-orange);
+    color: var(--bp-orange);
+    font-weight: 500;
     padding: 0 0.2em;
 }
 
 a.inline-link:focus, a.inline-link:hover {
     border-bottom:none;
-    background: var(--bp-red);
+    background: var(--bp-orange);
     color:var(--bp-white);
 }
 
 a.inline-link:active {
-    border-bottom:1px solid var(--bp-red);
+    border-bottom:1px solid var(--bp-orange);
 }
 
 .content {
@@ -79,6 +90,9 @@ a.inline-link:active {
 .services {
     background: var(--bp-white);
 }
+
+.content h1 {padding-top:0.5em;}
+
 .logo {
     font-weight: 700;
     letter-spacing:-0.05em;
@@ -111,7 +125,7 @@ a.inline-link:active {
 
 .hero a.inline-link:focus, .hero a.inline-link:hover {
     background: var(--bp-white);
-    color:var(--bp-red);
+    color:var(--bp-orange);
 }
 
 .header .logo {
@@ -123,7 +137,7 @@ a.inline-link:active {
     margin-top:4.3em;
     padding-bottom:2em;
     background: var(--bp-yellow);
-    background: linear-gradient(0deg, var(--bp-light-yellow) 0%, var(--bp-yellow) 100%);
+    background: linear-gradient(0deg, var(--bp-light-yellow) 0%, var(--bp-yellow) 80%);
 }
 
 .hero .content {
@@ -143,20 +157,19 @@ a.inline-link:active {
 
 .projects {
     background:var(--bp-white);
-    padding-bottom: 3em;
+    padding: 3em 0;
 }
 
 .projects h1 {margin-bottom:0;}
 
 .footer {
-    padding:1em 0;
+    padding:1.5em 0;
     background-image: url("../img/bg-yellow.png");
     background-repeat:no-repeat;
     background-size: cover;
 }
 
 .footer  .logo {
-    padding-top:2em;
-    padding-bottom:0.5em;
+    padding:0.5em 0;
     font-size: 1.8em;
 }
