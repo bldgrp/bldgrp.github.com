@@ -1,13 +1,13 @@
 :root {
-    --bp-white: #fffbf1;
-    --bp-light-yellow: #FEE6A4;
+    --bp-white: #fff8e5;
+    --bp-light-yellow: #ffe88d;
     --bp-yellow: #ffd942;
-    --bp-orange: #ed8607;
+    --bp-orange: #ff8000;
     --bp-black: #302014;
 }
 
 html {
-    background: var(--bp-yellow);
+    background: var(--bp-white);
     color:var(--bp-black);
     font-family:'Onest', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 1.1em;
@@ -87,22 +87,24 @@ a.inline-link:active {
     margin:0 auto;
 }
 
-.services {
-    background: var(--bp-white);
-}
-
 .content h1 {padding-top:0.5em;}
 
 .logo {
     font-weight: 700;
-    letter-spacing:-0.05em;
+    letter-spacing:-0.02em;
 }
+
 .logo-mark {
     position:relative;
     fill:var(--bp-orange);
 }
 .logo-text {
     padding-left:0.2em;
+}
+
+.header .logo {
+    position:relative;
+    top:-0.5em;
 }
 
 .header .logo-mark {
@@ -116,11 +118,8 @@ a.inline-link:active {
 }
 
 .hero .logo-mark {
-    height: 1.3em;
+    height: 20em;
     top:0.3em;
-}
-.header {
-    background: var(--bp-yellow);
 }
 
 .hero a.inline-link:focus, .hero a.inline-link:hover {
@@ -128,27 +127,30 @@ a.inline-link:active {
     color:var(--bp-orange);
 }
 
-.header .logo {
-    position:relative;
-    top:-0.5em;
-}
-
 .hero {
-    margin-top:4.3em;
     padding-bottom:2em;
     background: var(--bp-yellow);
-    background: linear-gradient(0deg, var(--bp-light-yellow) 0%, var(--bp-yellow) 80%);
+    background: linear-gradient(0deg, var(--bp-light-yellow) 0%, rgba(255, 217, 66, 0) 80%);
 }
 
+.top-bg {
+    background-color: var(--bp-yellow);
+}
+.top-bg-inner {
+    background-image: url('../img/logo.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 20%;
+}
 .hero .content {
     max-width:50em;
     text-align: center;
 }
 
 .hero .logo {
-    padding-top:0.5em;
+    padding-top:0.8em;
     padding-bottom:0.2em;
-    font-size:6em;
+    font-size:8em;
 }
 
 .services{
@@ -157,16 +159,20 @@ a.inline-link:active {
 
 .projects {
     background:var(--bp-white);
-    padding: 3em 0;
+    padding-bottom: 6em;
 }
-
-.projects h1 {margin-bottom:0;}
 
 .footer {
     padding:1.5em 0;
-    background-image: url("../img/bg-yellow.png");
-    background-repeat:no-repeat;
-    background-size: cover;
+    background-color: var(--bp-yellow);
+    background-image: url('../img/hex-tile.svg');
+    background-size: 20%;
+    background-position: center;
+}
+@media screen and (min-width: 48em)	{
+    .footer {
+        background-size: 7%;
+    }
 }
 
 .footer  .logo {
