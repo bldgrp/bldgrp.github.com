@@ -47,6 +47,7 @@ p {
 
 .text-center{text-align: center;}
 .text-right {text-align: right;}
+.grid-v-center {align-items: center;}
 
 .button-primary {
     background: var(--bp-orange);
@@ -109,14 +110,22 @@ a.link-inline:active {
     top:0.7em;
 }
 
-.footer .logo-mark {
-    height: 55px;
-    top:0.5em;
+.hero .logo {
+    font-size:6.5em;
 }
 
 .hero .logo-mark {
     height: 20em;
     top:0.3em;
+}
+
+.footer  .logo {
+    font-size: 1.8em;
+} 
+
+.footer .logo-mark {
+    height: 55px;
+    top:0.5em;
 }
 
 .hero a.link-inline:focus, .hero a.link-inline:hover {
@@ -125,7 +134,8 @@ a.link-inline:active {
 }
 
 .hero {
-    padding-bottom:2em;
+    padding-top: 5em;
+    padding-bottom:4em;
     background: var(--bp-yellow);
     background: linear-gradient(0deg, var(--bp-light-yellow) 0%, rgba(255, 217, 66, 0) 80%);
 }
@@ -144,17 +154,14 @@ a.link-inline:active {
     text-align: center;
 }
 
-.hero .logo {
-    padding-top:0.5em;
-    font-size:6em;
-}
-
 .services{
-    padding: 0.5em 0 6em 0;
+    padding: 3em 0 6em 0;
 }   
 
 .service-sub {
     border-bottom:1px solid var(--bp-black);
+    padding-bottom:1.6em;
+    margin-bottom:2.6em;
 }
 
 .contact {
@@ -164,12 +171,11 @@ a.link-inline:active {
 
 .projects {
     background:var(--bp-light-yellow);
-    padding-top:2em;
-    padding-bottom:3.5em;
+    padding:3em 0 6em 0;
 }
 
-.projects h2 {
-    margin-bottom:0.2em;
+.projects h1 {
+    margin-bottom:1em;
 }
 
 .footer {
@@ -180,6 +186,7 @@ a.link-inline:active {
     background-position: center;
 }
 @media screen and (min-width: 48em)	{
+
     .hero .logo {
         font-size:7em;
     }
@@ -187,6 +194,7 @@ a.link-inline:active {
     .footer {
         background-size: 7%;
     } 
+    
 }
 
 @media screen and (min-width: 64em) {
@@ -196,8 +204,4 @@ a.link-inline:active {
     .contact {
         padding:2em 0 4.1em 0;
     }    
-}
-.footer  .logo {
-    padding:0.5em 0;
-    font-size: 1.8em;
 }
