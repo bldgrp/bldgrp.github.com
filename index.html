@@ -135,7 +135,7 @@
                 var x = getRndInteger(-40, 40);
                 var y = getRndInteger(-60, 60);
                 var letter = logoLetters[i];
-                gsap.from(letter,{ rotation: rotation, x: x, y: y, duration: 1, delay: 0.5 })
+                gsap.from(letter,{ rotation: rotation, x: x, y: y, duration: 1, delay: 0.5, ease: 'bounce.out' })
             }
         }
 
@@ -143,10 +143,16 @@
              return Math.floor(Math.random() * (max - min) ) + min;
         }
 
+        function setupHexGrid(elem){
+
+        }
+
         function init(){
             animateLogoLetters();
+            //scrollToReveal();
+            //setupHexGrid(document.getElementById('#animatedHexGrid'));
         }
-        
+
         init();
     </script>
 </body>
