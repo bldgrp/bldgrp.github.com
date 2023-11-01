@@ -1,7 +1,8 @@
 :root {
     --bp-white: #fff8e5;
-    --bp-light-yellow: #ffe88d;
-    --bp-yellow: #ffd942;
+    --bp-yellow-500: #ffe88d;
+    --bp-yellow-300: #ffd942;
+    --bp-yellow-200: rgb(251,202,4);
     --bp-orange: #ff8000;
     --bp-black: #302014;
 }
@@ -140,12 +141,12 @@ a.link-inline:active {
 .hero {
     padding-top: 5em;
     padding-bottom:4em;
-    background: var(--bp-yellow);
-    background: linear-gradient(0deg, var(--bp-light-yellow) 0%, rgba(255, 217, 66, 0) 80%);
+    background: var(--bp-yellow-300);
+    background: linear-gradient(0deg, var(--bp-yellow-500) 0%, rgba(255, 217, 66, 0) 80%);
 }
 
 .top-bg {
-    background-color: var(--bp-yellow);
+    background-color: var(--bp-yellow-300);
 }
 .top-bg-inner {
     background-image: url('../img/logo.svg');
@@ -174,7 +175,7 @@ a.link-inline:active {
 }
 
 .projects {
-    background:var(--bp-light-yellow);
+    background:var(--bp-yellow-500);
     padding:3em 0 6em 0;
 }
 
@@ -184,15 +185,15 @@ a.link-inline:active {
 
 .footer {
     padding:2.5em 0 2em;
-    background-color: var(--bp-yellow);
+    background-color: var(--bp-yellow-300);
     background-image: url('../img/hex-tile.svg');
     background-size: 20%;
     background-position: center;
 }
 
-#animatedHexGrid {
-    width:100%;
-    height:100%;
+#logo-animated {
+    fill:var(--bp-yellow-300);
+    stroke:var(--bp-yellow-300);
 }
 
 @media screen and (min-width: 48em)	{
