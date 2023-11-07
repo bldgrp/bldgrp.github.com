@@ -86,19 +86,17 @@ a.link-inline:active {
     margin:0 auto;
 }
 
-.content h1 {padding-top:0.5em;}
-
 .logo {
     font-weight: 700;
     letter-spacing:-0.02em;
 }
 
 .logo-mark {
-    position:relative;
     fill:var(--bp-orange);
 }
-.logo-text {
-    padding-left:0.2em;
+
+#logo-flying-bee {
+    opacity: 0;
 }
 
 .logo-letter {
@@ -107,21 +105,21 @@ a.link-inline:active {
 
 .header .logo {
     position:relative;
-    top:-0.5em;
 }
 
 .header .logo-mark {
-    height: 36px; 
-    top:0.7em;
+    height: 2.1em; 
+    position:absolute;
+    z-index: 10;
+}
+
+.header .logo-text {
+    line-height: 2.1em;
+    padding-left: 2.5em;
 }
 
 .hero .logo {
     font-size:6.5em;
-}
-
-.hero .logo-mark {
-    height: 20em;
-    top:0.3em;
 }
 
 .footer  .logo {
@@ -131,6 +129,7 @@ a.link-inline:active {
 .footer .logo-mark {
     height: 55px;
     top:0.5em;
+    position: relative;
 }
 
 .hero a.link-inline:focus, .hero a.link-inline:hover {
@@ -160,7 +159,7 @@ a.link-inline:active {
 }
 
 .services{
-    padding: 3em 0 6em 0;
+    padding: 4em 0 6em 0;
 }   
 
 .service-sub {
@@ -169,18 +168,26 @@ a.link-inline:active {
     margin-bottom:2.6em;
 }
 
-.contact {
-    background:var(--bp-white);
-    padding:1em 0 3.5em 0;
-}
-
 .projects {
     background:var(--bp-yellow-500);
-    padding:3em 0 6em 0;
+    padding:4em 0 6em 0;
 }
 
-.projects h1 {
-    margin-bottom:1em;
+#contact {
+    background:var(--bp-white);
+    padding:2em 0 4.5em 0;
+}
+
+.solutions {
+    position: relative;
+}
+
+.solution {
+    position:absolute;
+    transform: translate(-50%, -50%);
+    top:50%;
+    left:50%;
+    width:100%;
 }
 
 .footer {
@@ -194,6 +201,16 @@ a.link-inline:active {
 #logo-animated {
     fill:var(--bp-yellow-300);
     stroke:var(--bp-yellow-300);
+}
+
+#hex-grid-container {position:relative}
+#hex-grid-overlay {
+    position:absolute;
+    width:100%;
+    height:100%;
+    background: radial-gradient(ellipse, rgba(255,248,229,0) 0%, rgba(255,248,229,1) 98%);
+    top:0;
+    left:0;
 }
 
 @media screen and (min-width: 48em)	{
@@ -212,7 +229,7 @@ a.link-inline:active {
     .hero .logo {
         font-size:8em;
     }
-    .contact {
-        padding:2em 0 4.1em 0;
+    #contact {
+        padding:3em 0;
     }    
 }
