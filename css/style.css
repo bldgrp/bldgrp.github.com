@@ -54,12 +54,14 @@ p {
     background: var(--bp-orange);
     color:var(--bp-white);
     border:1px solid var(--bp-orange);
+    transition: background 0.5s, color 0.5s;
 }
 
 .button-primary:hover {
     background:var(--bp-white);
     color:var(--bp-orange);
     border:1px solid var(--bp-orange);
+    transition: background 0.5s, color 0.5s;
 }
 
 a.link-inline {
@@ -68,12 +70,14 @@ a.link-inline {
     color: var(--bp-orange);
     font-weight: 500;
     padding: 0 0.2em;
+    transition: background 0.5s, color 0.5s;
 }
 
 a.link-inline:focus, a.link-inline:hover {
     border-bottom:none;
     background: var(--bp-orange);
     color:var(--bp-white);
+    transition: background 0.5s, color 0.5s;
 }
 
 a.link-inline:active {

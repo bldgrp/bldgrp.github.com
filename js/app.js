@@ -51,14 +51,17 @@ function animateHexGrid(elem) {
         stagger: {
             amount: 40,
             from: 'random',
-            // axis: 'x',
+            grid: 'auto',
+            // axis: 'y',
             repeat: -1,
+            repeatDelay: 20
 
         },
         scrollTrigger: {
             trigger: elem,
-            // markers:true
-        }
+            //markers: true,
+            toggleActions: 'play pause resume pause'
+        },
     })
 
 }
@@ -71,7 +74,6 @@ function drawHexGrid(elem) {
     svg.setAttribute('viewBox', '-1 0 ' + containerWidth + ' ' + containerHeight);
 
     var triLen = 3;
-    var hexVertSideLen = 5 * triLen;
     var hexHeight = 11 * triLen;
     var hexHeight27 = 3 * triLen; // about 27% of height
     var hexHeight72 = 8 * triLen; // about 72% of height
@@ -112,8 +114,16 @@ function drawHexGrid(elem) {
 }
 
 function animateSolutionsText() {
-    var t1 = gsap.timeline({ repeat: -1, scrollTrigger: { trigger: '#contact' } });
+    var t1 = gsap.timeline({
+        repeat: -1,
+        scrollTrigger: {
+            trigger: '#contact',
+            //markers: true,
+            toggleActions: 'play pause resume pause'
+        }
+    });
     var solutions = document.querySelectorAll('.solution');
+    gsap.set(solutions, {opacity: 0});
     solutions.forEach(function tween(solution, i) {
         t1.fromTo(solution, { opacity: 0 }, { opacity: 1, yoyo: true, repeat: 1, duration: 1.5, ease: 'power' })
     });
