@@ -6,8 +6,23 @@ function init() {
     animateLogoLetters();
     animateSolutionsText();
     animateHeaderBee();
-    // animateLogoTriangles();
     animateHexGrid(document.getElementById('hex-grid-container'));
+    animateHeroBg();
+}
+
+function animateHeroBg() {
+    gsap.fromTo('.top-bg-inner', {
+        backgroundPosition: 'center 20%'
+    }, {
+        backgroundPosition: 'center 80%',
+        scrollTrigger: {
+            trigger: '.top-bg-inner',
+            markers: false,
+            scrub: 2,
+            start: 'top top',
+            end: 'bottom 50%'
+        }
+    })
 }
 
 function animateLogoLetters() {
@@ -27,6 +42,25 @@ function animateLogoTriangles() {
 
 function animateHexGrid(elem) {
     drawHexGrid(elem);
+    var polygon = elem.querySelectorAll('svg polygon');
+    gsap.to(polygon, {
+        keyframes: [
+            { opacity: 1, duration: 1, ease: 'bounce.out' },
+            { opacity: 0, duration: 3, ease: 'bounce.out' }
+        ],
+        stagger: {
+            amount: 40,
+            from: 'random',
+            // axis: 'x',
+            repeat: -1,
+
+        },
+        scrollTrigger: {
+            trigger: elem,
+            // markers:true
+        }
+    })
+
 }
 
 function drawHexGrid(elem) {
@@ -34,48 +68,47 @@ function drawHexGrid(elem) {
     var containerWidth = elem.offsetWidth;
 
     var svg = elem.querySelector('svg');
-    svg.setAttribute('fill', 'none')
-    svg.setAttribute('stroke', '#ffd942');
-    svg.setAttribute('viewBox', '0 0 ' + containerWidth + ' ' + containerHeight);
-    
+    svg.setAttribute('viewBox', '-1 0 ' + containerWidth + ' ' + containerHeight);
+
     var triLen = 3;
-    var hexVertSideLen = 5*triLen;
-    var hexVertSideLenHalf = hexVertSideLen/2;
-    var hexHeightHalf = 11*triLen/2;
-    var hexHeight72 = hexVertSideLen + 6*triLen/2; // about 72% of height
-    var hexWidth= 6*triLen*Math.sqrt(3);
-    var hexWidthHalf = hexWidth/2;
+    var hexVertSideLen = 5 * triLen;
+    var hexHeight = 11 * triLen;
+    var hexHeight27 = 3 * triLen; // about 27% of height
+    var hexHeight72 = 8 * triLen; // about 72% of height
+    var hexWidth = 6 * triLen * Math.sqrt(3);
+    var hexWidthHalf = hexWidth / 2;
 
-    var cols = Math.ceil(containerWidth / hexWidth);
-    var rows = Math.ceil(containerHeight / hexHeight72);
-
+    var cols = Math.floor((containerWidth - hexWidth) / hexWidth);
+    var rows = Math.floor((containerHeight - hexHeight72) / hexHeight72);
     for (var row = 0; row < rows; row++) {
-        var startRowWithFullHex = row % 2;
+        var offsetRow = row % 2;
         for (var col = 0; col < cols; col++) {
-            drawHexagon(row, col, startRowWithFullHex);
+            drawHexagon(row, col, offsetRow);
         }
     }
-    
-    function drawHexagon(row, col, startRowWithFullHex) {
-        var xOffset = col*hexWidth;
-        if (startRowWithFullHex) {
+
+    function drawHexagon(row, col, offsetRow) {
+        var xOffset = col * hexWidth + hexWidthHalf;
+        if (offsetRow) {
             xOffset += hexWidthHalf;
         }
-        var yOffset = row*(hexHeight72)-hexVertSideLenHalf;
-        
+        var yOffset = row * hexHeight72;
+
         // points are counterclockwise from top
-        var p1 = [xOffset, yOffset - hexHeightHalf].toString(); // top point
-        var p2 = [xOffset + hexWidthHalf, yOffset - hexVertSideLenHalf].toString(); 
-        var p3 = [xOffset + hexWidthHalf, yOffset + hexVertSideLenHalf].toString();
-        var p4 = [xOffset, yOffset + hexHeightHalf]; // bottom point
-        var p5 = [xOffset - hexWidthHalf, yOffset + hexVertSideLenHalf].toString();
-        var p6 = [xOffset - hexWidthHalf, yOffset - hexVertSideLenHalf].toString();
-    
+        var p1 = [xOffset, yOffset].toString(); // top point
+        var p2 = [xOffset + hexWidthHalf, yOffset + hexHeight27].toString();
+        var p3 = [xOffset + hexWidthHalf, yOffset + hexHeight72].toString();
+        var p4 = [xOffset, yOffset + hexHeight]; // bottom point
+        var p5 = [xOffset - hexWidthHalf, yOffset + hexHeight72].toString();
+        var p6 = [xOffset - hexWidthHalf, yOffset + hexHeight27].toString();
+
         var allPoints = p1 + ' ' + p2 + ' ' + p3 + ' ' + p4 + ' ' + p5 + ' ' + p6;
         var svgHex = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
         svgHex.setAttribute('points', allPoints);
+        svgHex.setAttribute('data-row', row);
+        svgHex.setAttribute('data-col', col);
         svg.appendChild(svgHex);
-    }    
+    }
 }
 
 function animateSolutionsText() {
