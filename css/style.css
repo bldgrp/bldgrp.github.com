@@ -54,14 +54,22 @@ p {
     background: var(--bp-orange);
     color:var(--bp-white);
     border:1px solid var(--bp-orange);
-    transition: background 0.5s, color 0.5s;
+    transition: 0.5s;
+    touch-action: manipulation;
 }
 
-.button-primary:hover {
+.button-primary:focus, .button-primary:hover {
     background:var(--bp-white);
     color:var(--bp-orange);
     border:1px solid var(--bp-orange);
-    transition: background 0.5s, color 0.5s;
+    transition: 0.5s;
+    box-shadow:none;
+}
+
+.button-primary:active {
+    transform: scale(1.1);
+    border:1px solid var(--bp-orange);
+    box-shadow:none;
 }
 
 a.link-inline {
@@ -70,14 +78,15 @@ a.link-inline {
     color: var(--bp-orange);
     font-weight: 500;
     padding: 0 0.2em;
-    transition: background 0.5s, color 0.5s;
+    transition: 0.5s;
+    touch-action: manipulation;
 }
 
 a.link-inline:focus, a.link-inline:hover {
     border-bottom:none;
     background: var(--bp-orange);
     color:var(--bp-white);
-    transition: background 0.5s, color 0.5s;
+    transition: 0.5s;
 }
 
 a.link-inline:active {
@@ -182,18 +191,6 @@ a.link-inline:active {
     padding:2em 0 4.5em 0;
 }
 
-.solutions {
-    position: relative;
-}
-
-.solution {
-    position:absolute;
-    transform: translate(-50%, -50%);
-    top:50%;
-    left:50%;
-    width:100%;
-}
-
 .footer {
     padding:2.5em 0 2em;
     background-color: var(--bp-yellow-300);
@@ -213,6 +210,10 @@ a.link-inline:active {
     fill: var(--bp-yellow-200);
     stroke: var(--bp-white);
     stroke-width: 2;
+}
+#bee-path {
+    position:absolute;
+    max-width:64em;
 }
 
 @media screen and (min-width: 48em)	{

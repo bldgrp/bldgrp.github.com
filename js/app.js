@@ -5,7 +5,7 @@ function init() {
     gsap.registerPlugin(MotionPathPlugin);
     animateLogoLetters();
     animateSolutionsText();
-    animateHeaderBee();
+    // animateHeaderBee();
     animateHexGrid(document.getElementById('hex-grid-container'));
     animateHeroBg();
 }
@@ -34,10 +34,6 @@ function animateLogoLetters() {
         delay: 0.5,
         ease: 'bounce.out'
     })
-}
-
-function animateLogoTriangles() {
-
 }
 
 function animateHexGrid(elem) {
@@ -123,9 +119,9 @@ function animateSolutionsText() {
         }
     });
     var solutions = document.querySelectorAll('.solution');
-    gsap.set(solutions, {opacity: 0});
+    gsap.set(solutions, { opacity: 0, display: 'none' });
     solutions.forEach(function tween(solution, i) {
-        t1.fromTo(solution, { opacity: 0 }, { opacity: 1, yoyo: true, repeat: 1, duration: 1.5, ease: 'power' })
+        t1.fromTo(solution, { opacity: 0, display: 'none' }, { opacity: 1, display: 'block', yoyo: true, repeat: 1, duration: 1.5, ease: 'power' })
     });
 }
 
@@ -133,7 +129,7 @@ function animateHeaderBee() {
     var t1 = gsap.timeline({
         scrollTrigger: {
             end: '50px top',
-            //markers:true,
+            markers: true,
             scrub: 1
         }
     });
@@ -142,15 +138,16 @@ function animateHeaderBee() {
     var p1 = { x: 500, y: 300 }; // bottom left corner of build group
     t1.to('#logo-flying-hex', { opacity: 0, duration: 1 }, 0);
     t1.to('#logo-flying-bee', { opacity: 1, duration: 2 }, "<50%");
-    // t1.to('.header .logo-mark', {rotate: 90}, 0);
-    // t1.to('.header .logo-mark', {
-    //     motionPath: {
-    //         path: [p0, p1],
-    //         xPercent: -50,
-    //         yPercent: -50,
-    //         transformOrigin: "50% 50%",
-    //         autoRotate:90
-    //     },
-    //     duration: 5
-    // }, "<50%")
+    t1.to('.header .logo-mark', { rotate: 90 }, 0);
+    t1.to('.header .logo-mark', {
+        motionPath: {
+            path: '#bee-path path',
+            align: '#bee-path path',
+            xPercent: -50,
+            yPercent: -50,
+            transformOrigin: "50% 50%",
+            autoRotate: 90
+        },
+        duration: 5
+    }, 0)
 }
