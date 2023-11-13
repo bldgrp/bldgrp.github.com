@@ -23,12 +23,12 @@
 <body>
     <div class="top-bg">
         <div class="top-bg-inner">
-            <section class="header">
+            <header id="header">
                 <div class="content">
                     <div class="pure-g">
                         <div class="pure-u-1-2">
-                            <div class="logo">
-                                <svg class="logo-mark" viewBox="0 0 18.9 20" version="1.1"
+                            <div class="logo">                               
+                                <svg class="logo-mark" id="logo-flying" viewBox="0 0 18.9 20" version="1.1"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path id="logo-flying-hex"
                                         d="M 9.4475845,0 7.8730104,0.90909091 6.2983673,1.8181818 4.7237931,2.7272727 3.1492173,3.6363636 1.5746449,4.5454545 0,5.4545455 v 1.8181818 1.8181818 1.8181819 1.818182 1.818182 l 1.5746449,0.90909 1.5745724,0.909091 1.5745758,0.909092 1.5745742,0.90909 1.5746431,0.909091 L 9.4475845,20 l 1.5745745,-0.909091 1.574574,-0.909091 1.574645,-0.90909 1.574574,-0.909092 1.574574,-0.909091 1.574574,-0.90909 V 12.727273 10.909091 9.0909091 7.2727273 5.4545455 L 17.320526,4.5454545 15.745952,3.6363636 14.171378,2.7272727 12.596733,1.8181818 11.022159,0.90909091 Z m 0,1.8181818 1.5745745,0.9090909 1.574574,0.9090909 1.574645,0.9090909 v 1.8181819 l 1.574574,-0.9090909 1.574574,0.9090909 V 8.1818182 10 v 1.818182 1.818182 l -1.574574,0.909091 -1.574574,-0.909091 v 1.818181 l -1.574645,0.909091 -1.574574,0.909092 -1.5745745,0.90909 L 7.8730104,17.272728 6.2983673,16.363636 4.7237931,15.454545 V 13.636364 L 3.1492173,14.545455 1.5746449,13.636364 V 11.818182 10 8.1818182 6.3636364 L 3.1492173,5.4545455 4.7237931,6.3636364 V 4.5454545 L 6.2983673,3.6363636 7.8730104,2.7272727 Z m 0,1.8181818 -1.5745741,0.9090909 -1.5746431,0.909091 V 7.2727273 L 7.8730104,8.1818182 9.4475845,9.0909091 11.022159,8.1818182 12.596733,7.2727273 V 5.4545455 l -1.574574,-0.909091 z m 0,1.8181819 L 11.022159,6.3636364 9.4475845,7.2727273 7.8730104,6.3636364 Z M 3.1492189,7.2727273 v 1.8181818 1.8181819 1.818182 L 4.7237931,11.818182 V 10 8.1818182 Z m 12.5967331,0 -1.574574,0.9090909 V 10 11.818182 l 1.574574,0.909091 V 10.909091 9.0909091 Z M 6.2983673,9.0909091 v 1.8181819 l 1.5746431,0.909091 1.5745741,0.909091 1.5745745,-0.909091 1.574574,-0.909091 V 9.0909091 L 11.022159,10 9.4475845,10.909091 7.8730104,10 Z m 0,3.6363639 v 1.818182 l 1.5746431,0.90909 1.5745741,0.909091 1.5745745,-0.909091 1.574574,-0.90909 v -1.818182 l -1.574574,0.909091 -1.5745745,0.909091 -1.5745741,-0.909091 z" />
@@ -42,8 +42,8 @@
                                 href="mailto:build@buildgroup.io">Contact us</a></div>
                     </div>
                 </div>
-            </section>
-            <section class="hero">
+            </header>
+            <section id="hero">
                 <div class="content">
                     <div class="logo">
                         <span class="logo-letter">B</span><span class="logo-letter">u</span><span
@@ -63,11 +63,11 @@
         </div>
     </div>
 
-    <section class="services">
+    <section id="services-external" class="services">
         <div class="content">
             <div class="pure-g">
                 <div class="pure-u-1 pure-u-md-20-24">
-                    <h1>Consulting</h1>
+                    <h1><span>Consulting</span></h1>
                     <h2>Flexible, customizable combination of development, product design, and technical strategy.</h2>
                 </div>
             </div>
@@ -95,11 +95,11 @@
             </div>
         </div>
     </section>
-    <section class="projects">
+    <section id="services-internal" class="services">
         <div class="content">
             <div class="pure-g">
                 <div class="pure-u-1 pure-u-md-20-24">
-                    <h1>Special Initiatives</h1>
+                    <h1><span>Special Initiatives</span></h1>
                     <h2>Long term ROI and passion projects that keep us sharp.</h2>
                 </div>
             </div>
@@ -128,19 +128,18 @@
     </section>
     <section id="contact" class="text-center">
         <div class="content">
-            <div class="text-center">
-                <h1 class="solutions">
-                    <span class="solution">Build your MVP</span>
-                    <span class="solution">Refine your pitch deck</span>
-                    <span class="solution">Finish your features</span>
-                    <span class="solution">Create a hiring plan</span>
-                </h1>
-                <h3><a class="pure-button button-primary button-xlarge" href="mailto:build@buildgroup.io">Contact us</a>
-                </h3>
-            </div>
+            <h1 class="solutions">
+                <span class="solution">Build an MVP</span>
+                <span class="solution">Refine your pitch deck</span>
+                <span class="solution">Finish the next sprint</span>
+                <span class="solution">Create a hiring plan</span>
+                <span class="solution">Prepare a technical handoff</span>
+            </h1>
+            <h3><a class="pure-button button-primary button-xlarge" href="mailto:build@buildgroup.io">Contact us</a>
+            </h3>
         </div>
     </section>
-    <footer class="footer">
+    <footer id="footer">
         <div class="content">
             <div class="pure-g grid-v-center">
                 <div class="pure-u-1 pure-u-md-10-24">

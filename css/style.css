@@ -48,6 +48,7 @@ p {
 
 .text-center{text-align: center;}
 .text-right {text-align: right;}
+.text-justify{text-align:justify;}
 .grid-v-center {align-items: center;}
 
 .button-primary {
@@ -116,41 +117,35 @@ a.link-inline:active {
     display:inline-block;
 }
 
-.header .logo {
-    position:relative;
+#header .logo-mark {
+    height: 2.4em;
+    float:left;
 }
+#header .logo-text {
+    padding-left: 0.5em;
+    line-height: 2.4em;
+} 
 
-.header .logo-mark {
-    height: 2.1em; 
-    position:absolute;
-    z-index: 10;
-}
-
-.header .logo-text {
-    line-height: 2.1em;
-    padding-left: 2.5em;
-}
-
-.hero .logo {
+#hero .logo {
     font-size:6.5em;
 }
 
-.footer  .logo {
+#footer  .logo {
     font-size: 1.8em;
 } 
 
-.footer .logo-mark {
-    height: 55px;
+#footer .logo-mark {
+    height: 1.8em;
     top:0.5em;
     position: relative;
 }
 
-.hero a.link-inline:focus, .hero a.link-inline:hover {
+#hero a.link-inline:focus, #hero a.link-inline:hover {
     background: var(--bp-white);
     color:var(--bp-orange);
 }
 
-.hero {
+#hero {
     padding-top: 5em;
     padding-bottom:4em;
     background: var(--bp-yellow-300);
@@ -166,14 +161,14 @@ a.link-inline:active {
     background-repeat: no-repeat;
     background-position: center 20%;
 }
-.hero .content {
+#hero .content {
     max-width:50em;
     text-align: center;
 }
 
-.services{
+.services {
     padding: 4em 0 6em 0;
-}   
+}
 
 .service-sub {
     border-bottom:1px solid var(--bp-black);
@@ -181,9 +176,8 @@ a.link-inline:active {
     margin-bottom:2.6em;
 }
 
-.projects {
+#services-internal {
     background:var(--bp-yellow-500);
-    padding:4em 0 6em 0;
 }
 
 #contact {
@@ -191,7 +185,21 @@ a.link-inline:active {
     padding:2em 0 4.5em 0;
 }
 
-.footer {
+.solutions {position:relative; min-height:3em;}
+.solution {
+    position:absolute;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    top:50%;
+    left:50%;
+    width:100%;
+}
+
+#contact .content {
+    max-width: 45em;
+}
+
+#footer {
     padding:2.5em 0 2em;
     background-color: var(--bp-yellow-300);
     background-image: url('../img/hex-tile.svg');
@@ -204,6 +212,7 @@ a.link-inline:active {
     stroke:var(--bp-yellow-300);
 }
 
+#hex-grid-container {min-height: 10em;}
 #hex-grid {overflow:visible}
 #hex-grid polygon {
     opacity: 0;
@@ -216,20 +225,24 @@ a.link-inline:active {
     max-width:64em;
 }
 
+
 @media screen and (min-width: 48em)	{
 
-    .hero .logo {
+    #hero .logo {
         font-size:7em;
     }
 
-    .footer {
+    #footer {
         background-size: 7%;
     } 
     
+    .solutions {
+        min-height: 1.5em;
+    }
 }
 
 @media screen and (min-width: 64em) {
-    .hero .logo {
+    #hero .logo {
         font-size:8em;
     }
     #contact {
