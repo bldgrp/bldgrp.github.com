@@ -38,23 +38,30 @@ function animateLogoLetters() {
 
 function animateHexGrid(elem) {
     var polygons = drawHexGrid(elem);
-    var intervalId;
+    var loopTween = gsap.to({}, {
+        duration: 0.4,
+        repeat: -1,
+        onRepeat: animatePolygons(polygons) 
+    });
+    loopTween.pause();
     ScrollTrigger.create({
         trigger: elem,
         // markers: true,
         onEnter: function () {
-            clearInterval(intervalId);
-            intervalId = setInterval(animatePolygons(polygons), 400);
+            // console.log('enter');
+            loopTween.resume();            
         },
         onEnterBack: function () {
-            clearInterval(intervalId);
-            intervalId = setInterval(animatePolygons(polygons), 400);
+            // console.log('enter back');
+            loopTween.resume();
         },
         onLeave: function () {
-            clearInterval(intervalId);
+            // console.log('leave');
+            loopTween.pause();
         },
         onLeaveBack: function () {
-            clearInterval(intervalId);
+            // console.log('leaveback')
+            loopTween.pause();
         }
     });
 }
@@ -64,9 +71,10 @@ function animatePolygons(polygons) {
     var colMax = polygons[0].length-1;
     var row = gsap.utils.random(0, rowMax, 1);
     var col = gsap.utils.random(0, colMax, 1);
-    return function () {
+    return function makeTween() {
         row = getRandomIdx(row, 4, 0, rowMax);
         col = getRandomIdx(col, 2, 0, colMax);
+        // console.log(row, col);
         gsap.to(polygons[row][col], {
             keyframes: [
                 { opacity: 1, duration: 1, ease: 'bounce.out' },
